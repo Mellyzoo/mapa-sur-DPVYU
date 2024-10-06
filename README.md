@@ -5,7 +5,7 @@ Esta Aplicación Web Progresiva (PWA) está diseñada para funcionar sin conexi�
 
 ## Tecnologías Utilizadas
 
-La PWA fue desarrollada utilizando tecnologías de código abierto:
+Esta PWA fue desarrollada utilizando tecnologías de código abierto:
 
 - **Vite PWA**
 - **React**
@@ -14,3 +14,4 @@ La PWA fue desarrollada utilizando tecnologías de código abierto:
 - **Node**
 - **PNPM**
 - **Git**
+- **GNU/Linux**
