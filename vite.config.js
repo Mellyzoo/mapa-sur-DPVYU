@@ -19,6 +19,7 @@ export default defineConfig({
         name: "mapa-sur-DPVYU",
         short_name: "mapa",
         start_url: "/mapa-sur-DPVYU/",
+        lang: "es",
         scope: "/mapa-sur-DPVYU/",
         id: "/mapa-sur-DPVYU/",
         description:
