@@ -63,7 +63,6 @@ function App() {
       <PWABadge />
       <Layers />
       <LiveLocationToggle />
-
     </MapContainer>
   );
 }
