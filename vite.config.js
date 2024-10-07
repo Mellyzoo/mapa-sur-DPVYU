@@ -17,7 +17,7 @@ export default defineConfig({
       ],
       manifest: {
         name: "mapa-sur-DPVYU",
-        short_name: "mapa-sur-DPVYU",
+        short_name: "mapa",
         start_url: "/mapa-sur-DPVYU/",
         scope: "/mapa-sur-DPVYU/",
         id: "/mapa-sur-DPVYU/",
@@ -55,7 +55,7 @@ export default defineConfig({
       ],
 
       workbox: {
-        globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
+        // globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
         skipWaiting: true,
@@ -83,7 +83,7 @@ export default defineConfig({
         ],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
-        navigateFallback: "/mapa-sur-DPVYU/index.html", // Ruta fallback en caso de que no se encuentre una ruta
+        navigateFallback: "/mapa-sur-DPVYU/index.html/", // Ruta fallback en caso de que no se encuentre una ruta
         navigateFallbackAllowlist: [/^\/mapa-sur-DPVYU\//], // Permitir la ruta "/mapaDPVyU/"
         // additionalManifestEntries: [
         //   { url: "/mapa-sur-DPVYU/index.html", revision: null },
@@ -92,7 +92,7 @@ export default defineConfig({
 
       devOptions: {
         enabled: true,
-        navigateFallback: "index.html",
+        navigateFallback: "mapa-sur-DPVYU/index.html/",
         suppressWarnings: true,
         type: "module",
       },
