@@ -22,12 +22,12 @@ jobs:
       - name: Use Node.js 22.5.1
         uses: actions/setup-node@v3
         with:
-          node-version: '22.5.1'
+          node-version: '22.5.1'  # Aquí puedes mantener la versión de Node.js que estás utilizando
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 9.10.0
+          version: 9.10.0  # Esta versión es compatible con Node.js 22
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: 'github-pages'
-          path: dist 
+          path: dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
