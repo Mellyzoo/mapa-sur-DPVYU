@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base:"/mapa-sur-DPVYU/",
   plugins: [
     react(),
     VitePWA({
@@ -16,10 +17,10 @@ export default defineConfig({
       ],
       manifest: {
         name: "mapa-sur-DPVYU",
-        id: "mapa-sur-DPVYU",
+        id: "/mapa-sur-DPVYU/",
         short_name: "mapa-sur-DPVYU",
-        start_url: "./mapa-sur-DPVYU/",
-        scope: "./mapa-sur-DPVYU/",
+        start_url: "/",
+        scope: "/",
         description:
           "mapa para marcar la geolocalizacion de edificios o viviendas para llegar más rapido",
         theme_color: "#ffffff",
@@ -54,6 +55,7 @@ export default defineConfig({
       ],
 
       workbox: {
+        globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
         cleanupOutdatedCaches: true,
