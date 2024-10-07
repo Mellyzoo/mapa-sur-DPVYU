@@ -3,12 +3,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base:"/mapa-sur-DPVYU/",
+  base: "/mapa-sur-DPVYU/",
   plugins: [
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      injectRegister: "false", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
+      injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
       includeAssets: [
         "favicon.svg",
         "favicon.ico",
@@ -21,7 +21,7 @@ export default defineConfig({
         start_url: "/mapa-sur-DPVYU/",
         lang: "es",
         scope: "/mapa-sur-DPVYU/",
-        id: "/mapa-sur-DPVYU/",
+        id: "mapa-sur-DPVYU",
         description:
           "mapa para marcar la geolocalizacion de edificios o viviendas para llegar más rapido",
         theme_color: "#ffffff",
@@ -56,10 +56,10 @@ export default defineConfig({
       ],
 
       workbox: {
-        // globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
+        globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
-        skipWaiting: true,
+        // skipWaiting: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/\w+\.tile\.openstreetmap\.org\/.*/i,
@@ -74,6 +74,7 @@ export default defineConfig({
               cacheableResponse: {
                 statuses: [0, 200],
               },
+
               // fetchOptions: {
               //   credentials: 'include', // Asegúrate de incluir credenciales si es necesario
               // },
@@ -84,7 +85,7 @@ export default defineConfig({
         ],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
-        navigateFallback: "/mapa-sur-DPVYU/index.html/", // Ruta fallback en caso de que no se encuentre una ruta
+        navigateFallback: "/mapa-sur-DPVYU/index.html", // Ruta fallback en caso de que no se encuentre una ruta
         navigateFallbackAllowlist: [/^\/mapa-sur-DPVYU\//], // Permitir la ruta "/mapaDPVyU/"
         // additionalManifestEntries: [
         //   { url: "/mapa-sur-DPVYU/index.html", revision: null },
@@ -93,7 +94,7 @@ export default defineConfig({
 
       devOptions: {
         enabled: true,
-        navigateFallback: "mapa-sur-DPVYU/index.html/",
+        navigateFallback: "/mapa-sur-DPVYU/index.html",
         suppressWarnings: true,
         type: "module",
       },
