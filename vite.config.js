@@ -62,17 +62,16 @@ export default defineConfig({
         // skipWaiting: true,
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/\w+\.tile\.openstreetmap\.org\/.*/i,
-            handler: "NetworkFirst",
+            urlPattern: /^https:\/\/[a-z]\.(tile\.openstreetmap\.org|osm\.org)\/./,
+            handler: 'CacheFirst',
             options: {
-              cacheName: "osm-tiles",
+              cacheName: 'osm-tiles',
               expiration: {
-                maxEntries: 200,
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 días
-                purgeOnQuotaError: true, // Borrar si se excede el almacenamiento
+                maxEntries: 1000,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 días
               },
               cacheableResponse: {
-                statuses: [0, 200],
+                statuses: [0, 200]
               },
 
               // fetchOptions: {
