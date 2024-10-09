@@ -53,7 +53,8 @@ function App() {
       center={mapState.center}
       zoom={mapState.zoom}
       zoomControl={false}
-      style={{ height: "100vh", width: "100%" }}
+      scrollWheelZoom={true}
+      style={{ height: "100vh", width: "100vw" }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
