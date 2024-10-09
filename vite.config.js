@@ -19,8 +19,8 @@ export default defineConfig({
         name: "mapa-sur-DPVYU",
         short_name: "mapa",
         start_url: "/",
+        scope: "/",
         lang: "es",
-        scope: "/mapa-sur-DPVYU/",
         id: "mapa-sur-DPVYU",
         description:
           "mapa para marcar la geolocalizacion de edificios o viviendas para llegar más rapido",
