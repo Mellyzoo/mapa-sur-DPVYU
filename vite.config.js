@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      // injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
+      injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
       includeAssets: [
         "favicon.svg",
         "favicon.ico",
@@ -59,11 +59,11 @@ export default defineConfig({
         globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
-        // skipWaiting: true,
+       skipWaiting: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/\w+\.tile\.openstreetmap\.org\/.*/i,
-            handler: "NetworkFirst",
+            handler: "StaleWhileRevalidate",
             options: {
               cacheName: "osm-tiles",
               expiration: {
@@ -75,9 +75,9 @@ export default defineConfig({
                 statuses: [0, 200],
               },
 
-              // fetchOptions: {
-              //   credentials: 'include', // Asegúrate de incluir credenciales si es necesario
-              // },
+              fetchOptions: {
+                credentials: 'include', // Asegúrate de incluir credenciales si es necesario
+              },
             },
           },
 
@@ -87,9 +87,9 @@ export default defineConfig({
         clientsClaim: true,
         navigateFallback: "/mapa-sur-DPVYU/index.html", // Ruta fallback en caso de que no se encuentre una ruta
         navigateFallbackAllowlist: [/^\/mapa-sur-DPVYU\//], // Permitir la ruta "/mapaDPVyU/"
-        // additionalManifestEntries: [
-        //   { url: "/mapa-sur-DPVYU/index.html", revision: null },
-        // ],
+        additionalManifestEntries: [
+          { url: "/mapa-sur-DPVYU/index.html", revision: null },
+        ],
       },
 
       devOptions: {
