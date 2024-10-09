@@ -56,5 +56,14 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+        #   token: ${{ secrets.GITHUB_TOKEN }}
+         
+      - name: Diagnóstico
+        run: |
+          echo "Contenido de dist:"
+           ls -R dist
+           echo "Versión de Node.js:"
+           node --version
+           echo "Versión de pnpm:"
+           pnpm --version

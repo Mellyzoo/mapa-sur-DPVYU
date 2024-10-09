@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
+      // injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto
       includeAssets: [
         "favicon.svg",
         "favicon.ico",
@@ -67,7 +67,7 @@ export default defineConfig({
             options: {
               cacheName: "osm-tiles",
               expiration: {
-                maxEntries: 200,
+                maxEntries: 1000,
                 maxAgeSeconds: 30 * 24 * 60 * 60, // 30 días
                 purgeOnQuotaError: true, // Borrar si se excede el almacenamiento
               },
