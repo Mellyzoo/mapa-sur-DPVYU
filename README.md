@@ -8,8 +8,7 @@ Esta Aplicación Web Progresiva (PWA) está diseñada para funcionar sin conexi�
 Esta PWA fue desarrollada utilizando tecnologías de código abierto:
 
 - **Vite PWA**
-- **React**
-- **Leaflet**
+- **React-Leaflet**
 - **OpenStreetMap**
 - **Node**
 - **PNPM**
