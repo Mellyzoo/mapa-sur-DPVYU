@@ -18,8 +18,8 @@ export default defineConfig({
       manifest: {
         name: "mapa-sur-DPVYU",
         short_name: "mapa",
-        start_url: "/",
-        scope: "/",
+        start_url: "/mapa-sur-DPVYU/",
+        scope: "/mapa-sur-DPVYU/",
         lang: "es",
         id: "mapa-sur-DPVYU",
         description:
@@ -56,7 +56,7 @@ export default defineConfig({
       ],
 
       workbox: {
-        globDirectory: "/home/lean/Desktop/mapa-sur-DPVYU/",
+        globDirectory: "dist",
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
        skipWaiting: true,
@@ -67,7 +67,7 @@ export default defineConfig({
             options: {
               cacheName: "osm-tiles",
               expiration: {
-                maxEntries: 1000,
+                maxEntries: 500,
                 maxAgeSeconds: 30 * 24 * 60 * 60, // 30 días
                 purgeOnQuotaError: true, // Borrar si se excede el almacenamiento
               },
@@ -87,9 +87,6 @@ export default defineConfig({
         clientsClaim: true,
         navigateFallback: "/mapa-sur-DPVYU/index.html", // Ruta fallback en caso de que no se encuentre una ruta
         navigateFallbackAllowlist: [/^\/mapa-sur-DPVYU\//], // Permitir la ruta "/mapaDPVyU/"
-        additionalManifestEntries: [
-          { url: "/mapa-sur-DPVYU/index.html", revision: null },
-        ],
       },
 
       devOptions: {
