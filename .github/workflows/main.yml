@@ -23,24 +23,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.5.1'  # Aquí puedes mantener la versión de Node.js que estás utilizando
+          cache: 'pnpm'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9.10.0  # Esta versión es compatible con Node.js 22
+       # Step 3: Install PNPM
+      - name: Install PNPM
+        run: npm install -g pnpm
 
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
@@ -48,20 +40,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: 'github-pages'
-          path: dist
-
+    # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-
-      - name: Diagnóstico
-        run: |
-          echo "Contenido de dist:"
-           ls -R dist
-           echo "Versión de Node.js:"
-           node --version
-           echo "Versión de pnpm:"
-           pnpm --version
+        uses: peaceiris/actions-gh-pages@v3
