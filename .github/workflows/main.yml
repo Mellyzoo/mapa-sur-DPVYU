@@ -3,65 +3,24 @@ name: Deploy Vite PWA React App
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    
 jobs:
   build:
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [22.5.1]    
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Use Node.js 22.5.1
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.5.1'  # Aquí puedes mantener la versión de Node.js que estás utilizando
-
+      - uses: actions/checkout@v4
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 9.10.0  # Esta versión es compatible con Node.js 22
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
+          version: 9.10.0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: 'github-pages'
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-
-      - name: Diagnóstico
-        run: |
-          echo "Contenido de dist:"
-           ls -R dist
-           echo "Versión de Node.js:"
-           node --version
-           echo "Versión de pnpm:"
-           pnpm --version
