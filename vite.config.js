@@ -18,7 +18,7 @@ export default defineConfig({
       manifest: {
         name: "mapa-sur-DPVYU",
         short_name: "mapa",
-        start_url: ".",
+        start_url: "/",
         scope: "/",
         lang: "es",
         id: "mapa-sur-DPVYU",
