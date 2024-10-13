@@ -1,26 +1,42 @@
-name: Deploy Vite PWA React App
+name: Deploy Vite PWA to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-    
+    branches:
+      - main
+
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [22.5.1]    
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Setup Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          version: 9.10.0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          node-version: 22.5.1
+
+      # Setup PNPM
+      - name: Setup PNPM
+        run: npm install -g pnpm
+
+      # Install dependencies
       - name: Install dependencies
         run: pnpm install
+
+      # Build the project
+      - name: Build project
+        run: pnpm run build
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
+          publish_branch: gh-pages
+          cname: ''
