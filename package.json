@@ -1,6 +1,6 @@
 {
   "name": "mapa-sur-dpvyu",
-  "private": true,
+  "private": false,
   "homepage": "https://mellyzoo.github.io/mapa-sur-DPVYU/",
   "version": "0.0.0",
   "type": "module",

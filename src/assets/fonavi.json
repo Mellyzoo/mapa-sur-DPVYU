@@ -1,0 +1,200 @@
+{
+  "type":"FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 56,
+        "plan": "077",
+        "id": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72790871429926, -32.93973595307519]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 55,
+        "plan": "077",
+        "id": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.727522465717065, -32.939553118108684]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 48,
+        "plan": "077",
+        "id": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72719791842315, -32.939341521059866]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 54,
+        "plan": "077",
+        "id": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.728388819193775, -32.93936853347605]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 53,
+        "plan": "077",
+        "id": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.7281581492247, -32.939328014848684]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 52,
+        "plan": "077",
+        "id": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72799185227023, -32.93908040061138]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 49,
+        "plan": "077",
+        "id": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.727235469348344, -32.93864819955415]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 50,
+        "plan": "077",
+        "id": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72763243627189, -32.93875625001648]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 50,
+        "plan": "077",
+        "id": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72835663268648, -32.93857616583925]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 47,
+        "plan": "077",
+        "id": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.728388819193775, -32.93972869823675]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 46,
+        "plan": "077",
+        "id": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.726629290124514, -32.93953961192032]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 45,
+        "plan": "077",
+        "id": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72686532451149, -32.93935502726906]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 44,
+        "plan": "077",
+        "id": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.726296696215606, -32.93909390686045]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 43,
+        "plan": "077",
+        "id": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.72590509370995, -32.93934152105993]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tipo": "tira",
+        "nombre": 42,
+        "plan": "077",
+        "id": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-60.7256958814124, -32.939400047951224]
+      }
+    }
+  ]
+}
