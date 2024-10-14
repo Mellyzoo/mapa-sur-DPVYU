@@ -13,6 +13,8 @@ jobs:
       # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }} # Usar el PAT para autenticación si es necesario
 
       # Setup Node.js environment
       - name: Setup Node.js
@@ -32,11 +34,17 @@ jobs:
       - name: Build project
         run: pnpm run build
 
+      # Configure Git (opcional, para asegurarse de que el despliegue se realice correctamente)
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_TOKEN }} # Cambiado de github_token a personal_token
           publish_dir: dist
           publish_branch: gh-pages
           cname: ''
