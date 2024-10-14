@@ -6,46 +6,32 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GH_TOKEN }} # Usar el PAT
 
-      # Setup Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22.5.1
+          node-version: '20'  # Usando una versión LTS de Node
 
-      # Setup PNPM
       - name: Setup PNPM
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8  # Especifica la versión de PNPM que quieres usar
 
-      # Install dependencies
       - name: Install dependencies
         run: pnpm install
 
-      # Build the project
       - name: Build project
         run: pnpm run build
 
-      # Configure Git para evitar problemas de permisos
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory /github/workspace
-
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: dist
-          publish_branch: gh-pages
-          cname: ''
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
