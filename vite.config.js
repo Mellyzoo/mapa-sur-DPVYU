@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      base: "/mapa-sur-DPVYU",
+      base: "/mapa-sur-DPVYU/",
       manifest: false, // Desactiva la generación del manifiesto automático
       registerType: "autoUpdate",
       injectRegister: "auto", // Cambia esta configuración para asegurarte de que el SW se registre automáticamente en el lugar correcto

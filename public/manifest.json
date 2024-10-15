@@ -12,17 +12,17 @@
     "orientation": "portrait",
     "icons": [
       {
-        "src": "./icons/pwa-64x64.png",
+        "src": "/icons/pwa-64x64.png",
         "sizes": "512x6512",
         "type": "any maskable"
       },
       {
-        "src": "./icons/pwa-192x192.png",
+        "src": "/icons/pwa-192x192.png",
         "sizes": "192x192",
         "type": "any maskable"
       },
       {
-        "src": "./icons/pwa-512x512.png",
+        "src": "/icons/pwa-512x512.png",
         "sizes": "512x512",
         "type": "any maskable"
       }
