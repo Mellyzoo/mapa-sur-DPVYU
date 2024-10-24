@@ -14,3 +14,4 @@ Esta PWA fue desarrollada utilizando tecnologías de código abierto:
 - **PNPM**
 - **Git**
 - **GNU/Linux**
+- **Manjaro/Linux**
