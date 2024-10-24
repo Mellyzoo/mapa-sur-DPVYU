@@ -65,17 +65,18 @@ export default defineConfig({
         "favicon.ico",
         "robots.txt",
         "apple-touch-icon.png",
+         "manifest.webmanifest"
       ],
 
       workbox: {
         sourcemap: true,
         globDirectory: "dist",
-        globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
+        globPatterns: ["**/*.{js,css,html,svg,png,ico,webp,jpg,jpeg,map}"],
         globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
         skipWaiting: true,
         cleanupOutdatedCaches: true,
         clientsClaim: true,
-        navigateFallback: "/index.html", // Ruta fallback en caso de que no se encuentre una ruta
+        navigateFallback: "/mapa-sur-DPVYU/index.html", // Ruta fallback en caso de que no se encuentre una ruta
         navigateFallbackAllowlist: [/^\/mapa-sur-DPVYU\//], // Permitir la ruta "/mapaDPVyU/"
         runtimeCaching: [
           {
